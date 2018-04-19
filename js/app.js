@@ -2,6 +2,85 @@ var calculadora = {};
 
 calculadora = (function() {
 
+/*metodos para escribir en pantalla */
+document.getElementById("7").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "7";
+  else {
+    display.textContent = "7";
+  }
+})
+document.getElementById("0").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent+"0";
+})
+document.getElementById("8").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "8";
+  else {
+    display.textContent = "8";
+  }
+})
+document.getElementById("9").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "9";
+  else {
+    display.textContent = "9";
+  }
+})
+document.getElementById("6").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "6";
+  else {
+    display.textContent = "6";
+  }
+})
+document.getElementById("5").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "5";
+  else {
+    display.textContent = "5";
+  }
+})
+document.getElementById("4").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "4";
+  else {
+    display.textContent = "4";
+  }
+})
+document.getElementById("3").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "3";
+  else {
+    display.textContent = "3";
+  }
+})
+document.getElementById("2").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "2";
+  else {
+    display.textContent = "2";
+  }
+})
+document.getElementById("1").addEventListener("click", function(){
+var display = document.getElementById("display");
+  if (display.textContent!="0")
+  display.textContent = display.textContent + "1";
+  else {
+    display.textContent = "1";
+  }
+})
+})
 /*metodos para efecto del teclado*/
 document.getElementById("on").addEventListener("mousedown", function(){
 document.getElementById("on").setAttribute("style","transform:scale(0.95,0.95)")
@@ -23,11 +102,6 @@ document.getElementById("dividido").setAttribute("style","transform:scale(1,1)")
 })
 document.getElementById("7").addEventListener("mousedown", function() {
 document.getElementById("7").setAttribute("style","transform:scale(0.95,0.95)")
-if (document.getElementById("display").value = 0) {
-  document.getElementById("7")=7
-  
-}
-
 })
 document.getElementById("7").addEventListener("mouseup", function(){
 document.getElementById("7").setAttribute("style","transform:scale(1,1)")
