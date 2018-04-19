@@ -1,7 +1,12 @@
 var calculadora = {};
 
 calculadora = (function() {
-
+/* metotdo para boton ON/C */
+document.getElementById("on").addEventListener("click", function(){
+  var display = document.getElementById("display");
+      if (display.textContent!="0")
+      display.textContent = "0";
+    })
 /*metodos para escribir en pantalla */
 document.getElementById("7").addEventListener("click", function(){
 var display = document.getElementById("display");
