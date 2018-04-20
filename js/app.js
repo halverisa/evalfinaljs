@@ -24,7 +24,20 @@ document.getElementById("on").addEventListener("click", function(){
       if (display.textContent!="0")
       display.textContent = "0";
     })
-
+/*metodo para boton sign */
+document.getElementById("sign").addEventListener("click", function(){
+var display = document.getElementById("display");
+var signo = display.textContent.indexOf("-");
+    if (display.textContent !="0" && signo =="-1")
+          display.textContent = "-" + display.textContent;
+    else if (display.textContent =="0" && signo =="-1") {
+       display.textContent="0";
+    }
+   else {
+     var strl = display.textContent.slice(1);
+     display.textContent = strl;
+   }
+})
 /*metodos para escribir en pantalla */
 document.getElementById("7").addEventListener("click", function(){
 var display = document.getElementById("display");
