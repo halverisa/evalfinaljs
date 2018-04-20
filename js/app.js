@@ -1,12 +1,30 @@
 var calculadora = {};
 
 calculadora = (function() {
+  /*variables para calculos*/
+var suma = "";
+var resta = "";
+var multiplicacion="";
+var dividision ="";
+var operando1 ="";
+var operando2="";
+/*metodo para boton punto*/
+document.getElementById("punto").addEventListener("click", function(){
+var display = document.getElementById("display");
+var punto = display.textContent.indexOf(".");
+  if (display.textContent =="0" && punto =="-1" )
+  display.textContent = display.textContent + ".";
+  else if (display.textContent !="0" && punto =="-1") {
+   display.textContent = display.textContent + ".";
+  }
+})
 /* metotdo para boton ON/C */
 document.getElementById("on").addEventListener("click", function(){
   var display = document.getElementById("display");
       if (display.textContent!="0")
       display.textContent = "0";
     })
+
 /*metodos para escribir en pantalla */
 document.getElementById("7").addEventListener("click", function(){
 var display = document.getElementById("display");
@@ -85,7 +103,7 @@ var display = document.getElementById("display");
     display.textContent = "1";
   }
 })
-})
+
 /*metodos para efecto del teclado*/
 document.getElementById("on").addEventListener("mousedown", function(){
 document.getElementById("on").setAttribute("style","transform:scale(0.95,0.95)")
