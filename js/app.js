@@ -1,6 +1,44 @@
 var calculadora = {};
 
 calculadora = (function() {
+/*variables para calculos*/
+  var suma = "";
+  var resta = "";
+  var multiplicacion="";
+  var division ="";
+  var operando1 ="";
+  var operando2="";
+/*operacion sumar*/
+document.getElementById("mas").addEventListener("click", function(){
+  var display = document.getElementById("display");
+    if (display.textContent!="0" || display.textContent=="0") {
+      operando1=display.textContent;
+      display.textContent="";
+    }
+})
+/*boton igual*/
+document.getElementById("igual").addEventListener("click", function(){
+operando2 = document.getElementById("display").textContent;
+display.textContent="";
+sumar();
+display.textContent=suma;
+})
+/*funcion sumar*/
+function sumar(){
+  suma= parseFloat(operando1) + parseFloat(operando2);
+}
+/*funcion restar*/
+function restar(){
+  resta= parseFloat(operando1) - parseFloat(operando2);
+}
+/*funcion multiplicar*/
+function multiplicar(){
+  multiplicacion= parseFloat(operando1) + parseFloat(operando2);
+}
+/*funcion dividir*/
+function dividir(){
+  division= parseFloat(operando1) + parseFloat(operando2);
+}
 /*validadar cantidad de texto en pantalla*/
 function validartexto(){
   var p = document.getElementById("display").innerHTML;
@@ -9,13 +47,6 @@ function validartexto(){
     display.textContent = strl;
   }
 }
-/*variables para calculos*/
-var suma = "";
-var resta = "";
-var multiplicacion="";
-var dividision ="";
-var operando1 ="";
-var operando2="";
 /*metodo para boton punto*/
 document.getElementById("punto").addEventListener("click", function(){
 var display = document.getElementById("display");
