@@ -8,21 +8,7 @@ calculadora = (function() {
   var division ="";
   var operando1 ="";
   var operando2="";
-/*operacion sumar*/
-document.getElementById("mas").addEventListener("click", function(){
-  var display = document.getElementById("display");
-    if (display.textContent!="0" || display.textContent=="0") {
-      operando1=display.textContent;
-      display.textContent="";
-    }
-})
-/*boton igual*/
-document.getElementById("igual").addEventListener("click", function(){
-operando2 = document.getElementById("display").textContent;
-display.textContent="";
-sumar();
-display.textContent=suma;
-})
+  var operador="";
 /*funcion sumar*/
 function sumar(){
   suma= parseFloat(operando1) + parseFloat(operando2);
@@ -33,11 +19,13 @@ function restar(){
 }
 /*funcion multiplicar*/
 function multiplicar(){
-  multiplicacion= parseFloat(operando1) + parseFloat(operando2);
+  multiplicacion= parseFloat(operando1) * parseFloat(operando2);
+  validartexto();
 }
 /*funcion dividir*/
 function dividir(){
-  division= parseFloat(operando1) + parseFloat(operando2);
+  division= parseFloat(operando1) / parseFloat(operando2);
+  validartexto();
 }
 /*validadar cantidad de texto en pantalla*/
 function validartexto(){
@@ -47,6 +35,69 @@ function validartexto(){
     display.textContent = strl;
   }
 }
+/*boton igual*/
+document.getElementById("igual").addEventListener("click", function(){
+operando2 = document.getElementById("display").textContent;
+sum = operador.indexOf("mas");
+rest= operador.indexOf("menos")
+mult= operador.indexOf("por")
+divd= operador.indexOf("dividido")
+  if (sum ==0) {
+    sumar();
+    display.textContent=suma;
+  }
+  else if (rest==0) {
+    restar();
+    display.textContent=resta;
+  }
+  else if (divd==0) {
+    dividir();
+    display.textContent=division;
+  }
+  else if (mult==0) {
+    multiplicar();
+    display.textContent=multiplicacion;
+  }
+})
+/*metodo para boton sumar*/
+document.getElementById("mas").addEventListener("click", function(){
+  var display = document.getElementById("display");
+  operador= document.getElementById("mas").id;
+    if (display.textContent!="0" || display.textContent=="0") {
+      operando1=display.textContent;
+      display.textContent="";
+    }
+})
+/*metodo para boton menos*/
+document.getElementById("menos").addEventListener("click", function(){
+  var display = document.getElementById("display");
+  operador= document.getElementById("menos").id;
+    if (display.textContent!="0" || display.textContent=="0") {
+      operando1=display.textContent;
+      display.textContent="";
+    }
+})
+/*metodo para boton multiplicar*/
+document.getElementById("por").addEventListener("click", function(){
+  var display = document.getElementById("display");
+  operador= document.getElementById("por").id;
+    if (display.textContent!="0" || display.textContent=="0") {
+      operando1=display.textContent;
+      display.textContent="";
+    }
+})
+/*metodo para boton dividir*/
+document.getElementById("dividido").addEventListener("click", function(){
+  var display = document.getElementById("display");
+  operador= document.getElementById("dividido").id;
+    if (display.textContent!="0") {
+      operando1=display.textContent;
+      display.textContent="";
+    }
+    else if (display.textContent=="0") {
+      alert ("Operando no puede ser 0");
+    } alert(operador);
+})
 /*metodo para boton punto*/
 document.getElementById("punto").addEventListener("click", function(){
 var display = document.getElementById("display");
