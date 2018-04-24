@@ -20,12 +20,10 @@ function restar(){
 /*funcion multiplicar*/
 function multiplicar(){
   multiplicacion= parseFloat(operando1) * parseFloat(operando2);
-  validartexto();
 }
 /*funcion dividir*/
 function dividir(){
   division= parseFloat(operando1) / parseFloat(operando2);
-  validartexto();
 }
 /*validadar cantidad de texto en pantalla*/
 function validartexto(){
@@ -96,7 +94,7 @@ document.getElementById("dividido").addEventListener("click", function(){
     }
     else if (display.textContent=="0") {
       alert ("Operando no puede ser 0");
-    } alert(operador);
+    }
 })
 /*metodo para boton punto*/
 document.getElementById("punto").addEventListener("click", function(){
