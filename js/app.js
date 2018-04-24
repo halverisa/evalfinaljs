@@ -9,6 +9,8 @@ calculadora = (function() {
   var operando1 ="";
   var operando2="";
   var operador="";
+  var p="";
+  var largo="";
 /*funcion sumar*/
 function sumar(){
   suma= parseFloat(operando1) + parseFloat(operando2);
@@ -27,10 +29,10 @@ function dividir(){
 }
 /*validadar cantidad de texto en pantalla*/
 function validartexto(){
-  var p = document.getElementById("display").innerHTML;
+  p = document.getElementById("display").innerHTML;
   if (p.length > 8) {
-    var strl = display.textContent.slice(0,-1);
-    display.textContent = strl;
+    largo = display.textContent.substr(0,8);
+    display.textContent = largo;
   }
 }
 /*boton igual*/
@@ -43,18 +45,22 @@ divd= operador.indexOf("dividido")
   if (sum ==0) {
     sumar();
     display.textContent=suma;
+    validartexto();
   }
   else if (rest==0) {
     restar();
     display.textContent=resta;
+    validartexto();
   }
   else if (divd==0) {
     dividir();
     display.textContent=division;
+    validartexto();
   }
   else if (mult==0) {
     multiplicar();
     display.textContent=multiplicacion;
+    validartexto();
   }
 })
 /*metodo para boton sumar*/
